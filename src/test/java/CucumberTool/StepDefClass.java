@@ -1,3 +1,4 @@
+/*
 package CucumberTool;
 
 import io.cucumber.java.en.Given;
@@ -48,3 +49,4 @@ public class StepDefClass {
         throw new io.cucumber.java.PendingException();
     }
 }
+*/
