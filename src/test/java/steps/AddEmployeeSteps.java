@@ -23,10 +23,10 @@ public class AddEmployeeSteps extends CommonMethods {
     @When("user enter firstname and lastname")
     public void user_enter_firstname_and_lastname() {
         WebElement firstName = driver.findElement(By.id("firstName"));
-        firstName.sendKeys("soman");
+        firstName.sendKeys("talha");
 
         WebElement lastName = driver.findElement(By.id("lastName"));
-        lastName.sendKeys("yuria");
+        lastName.sendKeys("riaz");
     }
 
     @When("user clicks on save button")
