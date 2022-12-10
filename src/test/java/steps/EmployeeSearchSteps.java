@@ -17,15 +17,17 @@ public class EmployeeSearchSteps extends CommonMethods {
 
     @When("user enter valid employee id")
     public void user_enter_valid_employee_id() {
-        WebElement empIdField = driver.findElement(By.id("empsearch_id"));
-        sendText(empIdField, "45154A");
+        //WebElement empIdField = driver.findElement(By.id("empsearch_id"));
+        //sendText(empIdField, "45154A");
         // sendText(empIdField, ConfigReader.getPropertyValue("empId"));
+        sendText(employeeList.empSearchIdField, "45154A");
     }
 
     @When("user clicks on search button")
     public void user_clicks_on_search_button() {
-        WebElement searchButton = driver.findElement(By.id("searchBtn"));
-        click(searchButton);
+        //WebElement searchButton = driver.findElement(By.id("searchBtn"));
+        //click(searchButton);
+        click(employeeList.SearchButton);
     }
 
     @Then("user see employee information is displayed")
@@ -35,7 +37,8 @@ public class EmployeeSearchSteps extends CommonMethods {
 
     @When("user enters valid employee name")
     public void user_enters_valid_employee_name() {
-        WebElement searchNameField = driver.findElement(By.id("empsearch_employee_name_empName"));
-        sendText(searchNameField, "dawggy");
+        //WebElement searchNameField = driver.findElement(By.id("empsearch_employee_name_empName"));
+        //sendText(searchNameField, "dawggy");
+        sendText(employeeList.SearchByNameField, "ms");
     }
 }
