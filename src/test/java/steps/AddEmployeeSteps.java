@@ -1,10 +1,15 @@
 package steps;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utils.CommonMethods;
+
+import java.util.List;
+import java.util.Map;
 
 public class AddEmployeeSteps extends CommonMethods {
 
@@ -57,5 +62,31 @@ public class AddEmployeeSteps extends CommonMethods {
         sendText(addEmployee.lastNameField, lastNameValue);
     }
 
+    @When("user adds multiple employees and verify they are added successfully")
+    public void user_adds_multiple_employees_and_verify_they_are_added_successfully(DataTable dataTable) throws InterruptedException {
+        List<Map<String,String>> employeeNames = dataTable.asMaps();
+
+        //getting the map from list of maps
+        for (Map<String,String> employee:employeeNames) {
+            //getting the keys and values from evey map
+            String firstNameValue = employee.get("firstName");
+            String middleNameValue = employee.get("middleName");
+            String lastNameValue = employee.get("lastName");
+
+            sendText(addEmployee.firstNameField, firstNameValue);
+            sendText(addEmployee.middleNameField, middleNameValue);
+            sendText(addEmployee.lastNameField, lastNameValue);
+
+            click(addEmployee.saveButton);
+            Thread.sleep(2000);
+            //till this point one employee has been added
+            //verifying the employee is homework
+
+            click(dashboard.addEmployeeOption);
+            Thread.sleep(2000);
+
+
+        }
+    }
 
 }
