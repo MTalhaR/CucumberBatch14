@@ -47,8 +47,7 @@ public class ExcelReader {
 
 //this method will return list of maps having all the data from excel file
 
-    public static List<Map<String, String>> excelListIntoMap
-            (String filePath, String sheetName){
+    public static List<Map<String, String>> excelListIntoMap (String filePath, String sheetName){
         openExcel(filePath);
         getSheet(sheetName);
 

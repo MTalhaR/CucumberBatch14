@@ -48,7 +48,8 @@ public class LoginSteps extends CommonMethods {
 
     @Then("user is successfully logged in")
     public void user_is_successfully_logged_in() {
-        WebElement welcomeMessage = driver.findElement(By.id("welcome"));
+        //  WebElement welcomeMessage = driver.findElement(By.id("welcome"));
+        //   System.out.println(10/0);
         if(dashboard.welcomeMessage.isDisplayed()){
             System.out.println("Test case is passed");
         }else{
@@ -76,20 +77,17 @@ public class LoginSteps extends CommonMethods {
 
     @Then("error message displayed")
     public void error_message_displayed() {
-
         System.out.println("Error message displayed");
     }
 
     @When("user enters different {string} and {string} and verify the {string} for it")
     public void user_enters_different_and_and_verify_the_for_it(String username, String password, String errorMessage) {
-       sendText(login.usernameTextField, username);
-       sendText(login.passwordTextField, password);
-       click(login.loginButton);
+        sendText(login.usernameTextField, username);
+        sendText(login.passwordTextField, password);
+        click(login.loginButton);
 
-       String errorActual = login.errorMessage.getText();
-        Assert.assertEquals(errorMessage,errorActual);
-
-
+        String errorActual =  login.errorMessage.getText();
+        Assert.assertEquals(errorMessage, errorActual);
     }
 
 }
