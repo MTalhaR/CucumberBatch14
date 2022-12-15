@@ -4,19 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25e09718-2241-47c1-825e-ef0bd7613453" name="Changes" comment="class 06">
+    <list default="true" id="25e09718-2241-47c1-825e-ef0bd7613453" name="Changes" comment="class 07">
+      <change afterPath="$PROJECT_DIR$/log4j.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/runners/FailedRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/utils/Log.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Notes" beforeDir="false" afterPath="$PROJECT_DIR$/Notes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/AddEmployeePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/AddEmployeePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/runners/SmokeRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runners/SmokeRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/AddEmployeeSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/AddEmployeeSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/Hooks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/steps/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/LoginSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/utils/CommonMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/CommonMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/ExcelReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/ExcelReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/testData/batch14excel.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testData/batch14excel.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Dashboard.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Dashboard.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +56,7 @@
       <recent name="D:\Intellij IDEA\CucumberBatch14\src\test\resources\testData" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SmokeRunner">
+  <component name="RunManager" selected="JUnit.FailedRunner">
     <configuration name="Feature: EmployeeSearch" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/EmployeeSearch.feature" />
@@ -117,22 +115,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Verify dashboard" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Dashboard.feature" />
-      <option name="GLUE" value="steps" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+    <configuration name="FailedRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CucumberBatch14" />
-      <option name="NAME_FILTER" value="^Verify dashboard$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Verify dashboard$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Verify dashboard" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="PATTERN" value="runners.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="runners" />
+      <option name="MAIN_CLASS_NAME" value="runners.FailedRunner" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -154,11 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FailedRunner" />
         <item itemvalue="JUnit.SmokeRunner" />
         <item itemvalue="Cucumber Java.Feature: EmployeeSearch" />
         <item itemvalue="Cucumber Java.Scenario: Adding one employee" />
         <item itemvalue="Cucumber Java.Feature: Login" />
-        <item itemvalue="Cucumber Java.Scenario: Verify dashboard" />
       </list>
     </recent_temporary>
   </component>
@@ -255,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670789659037</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="class 07">
+      <created>1671035814359</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1671035814359</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -275,6 +275,7 @@
     <MESSAGE value="class 04" />
     <MESSAGE value="class 05" />
     <MESSAGE value="class 06" />
-    <option name="LAST_COMMIT_MESSAGE" value="class 06" />
+    <MESSAGE value="class 07" />
+    <option name="LAST_COMMIT_MESSAGE" value="class 07" />
   </component>
 </project>
