@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utils.CommonMethods;
 import utils.Constants;
+import utils.DBUtility;
 import utils.ExcelReader;
 
 import java.util.Iterator;
@@ -16,6 +17,9 @@ import java.util.List;
 import java.util.Map;
 
 public class AddEmployeeSteps extends CommonMethods {
+
+    String id;
+    String fName, lName;
 
     @When("user clicks on PIM option")
     public void user_clicks_on_pim_option() {
@@ -52,16 +56,19 @@ public class AddEmployeeSteps extends CommonMethods {
     }
     @Then("employee added successfully")
     public void employee_added_successfully() {
-
         System.out.println("Employee Added");
+        //MUST HAVE VERIFICATION STEP
     }
     @When("user enter {string} and {string}")
     public void user_enter_and(String firstName, String lastName) {
+        fName=firstName;
+        lName=lastName;
         sendText(addEmployee.firstNameField, firstName);
         sendText(addEmployee.lastNameField, lastName);
     }
     @When("user enter {string} and {string} for adding multiple employees")
     public void user_enter_and_for_adding_multiple_employees(String firstNameValue, String lastNameValue) {
+
         sendText(addEmployee.firstNameField, firstNameValue);
         sendText(addEmployee.lastNameField, lastNameValue);
     }
@@ -154,5 +161,24 @@ public class AddEmployeeSteps extends CommonMethods {
             click(dashboard.addEmployeeOption);
             Thread.sleep(2000);
         }
+    }
+
+    @When("user captures employee id")
+    public void user_captures_employee_id() {
+        id=addEmployee.empIdLocator.getAttribute("value");
+    }
+
+    @Then("added employee is displayed in database")
+    public void added_employee_is_displayed_in_database() {
+
+        String query=DatabaseSteps.getFnameLnameQuery()+id;
+        List<Map<String, String>> dataFromDatabase= DBUtility.getListOfMapsFromRset(query);
+
+        String fNameFromDb=dataFromDatabase.get(0).get("emp_firstname");
+        String lNameFromDb=dataFromDatabase.get(0).get("emp_lastname");
+        //System.out.println(fNameFromDb+" "+lNameFromDb);
+        //System.out.println(fName+" "+lName);
+        Assert.assertEquals(fName, fNameFromDb);
+        Assert.assertEquals(lName, lNameFromDb);
     }
 }
