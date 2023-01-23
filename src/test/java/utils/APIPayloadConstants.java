@@ -66,4 +66,17 @@ public class APIPayloadConstants {
         return obj.toString();
     }
 
+    public static String partialUpdateEmployeePayloadDynamic(String employee_id, String firstname, String lastname, String middlename, String gender,
+                                                      String dob){
+        JSONObject obj = new JSONObject();
+        obj.put("employee_id", employee_id);
+        obj.put("emp_firstname", firstname);
+        obj.put("emp_lastname", lastname);
+        obj.put("emp_middle_name", middlename);
+        obj.put("emp_gender", gender);
+        obj.put("emp_birthday", dob);
+
+        return obj.toString();
+    }
+
 }

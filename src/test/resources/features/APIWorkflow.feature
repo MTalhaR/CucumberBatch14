@@ -40,7 +40,26 @@ Feature: API workflow test
     And the employee id "Employee.employee_id" is stored as global to be used for other request
 
 
-  @apiupdate   @apidynamic
+  @apipartialupdate   @apidynamic
+  Scenario: API test case for partially updating the employee using highly dynamic body
+    Given a request is prepared for partially updating an employee with dynamic data "Talha" , "Bhatti"  , "Riaz" , "M" , "1997-04-21"
+    When a PATCH call is made to update an employee
+    Then the status code for creating an employee is 201
+    And the response body contains key "Message" and value "Employee record updated successfully"
+
+
+
+  @apipartialupdate   @apidynamic
+  Scenario: Getting the updated employee
+    Given a request is prepared for getting a updated employee
+    When a GET call is made to get this employee
+    Then the status code for this emp is 200
+    And the employee id "employee.employee_id" should match with global emp id
+    And the retrieved data at "employee" object should match with the data used for creating the employee
+      |emp_firstname|emp_lastname|emp_middle_name|emp_gender|emp_birthday|emp_status|emp_job_title|
+      |Talha        |Bhatti      |Riaz           |Male      |1997-04-21  |confirmed |QA Engineer  |
+
+  @apiupdate
   Scenario: API test case for updating the employee using highly dynamic body
     Given a request is prepared for updating an employee with dynamic data "50836A", "Talha" , "Bhatti"  , "Riaz" , "M" , "1997-04-21" , "Full time" , "QA"
     When a PUT call is made to update an employee
@@ -49,7 +68,7 @@ Feature: API workflow test
 
 
 
-  @apiupdate   @apidynamic
+  @apiupdate
   Scenario: Getting the updated employee
     Given a request is prepared for getting a updated employee
     When a GET call is made to get this employee

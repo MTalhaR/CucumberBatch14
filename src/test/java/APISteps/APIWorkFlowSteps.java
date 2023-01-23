@@ -142,4 +142,18 @@ public class APIWorkFlowSteps {
                 queryParam("employee_id", employee_id);
     }
 
+
+    @Given("a request is prepared for partially updating an employee with dynamic data {string} , {string}  , {string} , {string} , {string}")
+    public void a_request_is_prepared_for_partially_updating_an_employee_with_dynamic_data(String fName, String lName, String mName,
+                                                                                 String gender, String dob) {
+        request = given().header(APIConstants.Header_Key_Content_Type,APIConstants.Header_Value_Content_Type).
+                header(APIConstants.Header_Key_Authorization,GenerateTokenSteps.token).
+                body(APIPayloadConstants.partialUpdateEmployeePayloadDynamic(employee_id,fName, lName, mName, gender, dob));
+    }
+
+    @When("a PATCH call is made to update an employee")
+    public void a_patch_call_is_made_to_update_an_employee() {
+        response = request.when().patch(APIConstants.PARTIALLY_UPDATE_EMPLOYEE_URI);
+        response.prettyPrint();
+    }
 }
