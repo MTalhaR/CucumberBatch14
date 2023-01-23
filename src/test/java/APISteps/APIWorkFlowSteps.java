@@ -115,8 +115,31 @@ public class APIWorkFlowSteps {
         request = given().
                 header(APIConstants.Header_Key_Content_Type, APIConstants.Header_Value_Content_Type).
                 header(APIConstants.Header_Key_Authorization, GenerateTokenSteps.token).
-                body(APIPayloadConstants.createEmployeePayloadDynamic
-                        (firstname, lastname, middlename, gender,
-                                dob, empStatus, jobTitle));
+                body(APIPayloadConstants.createEmployeePayloadDynamic(firstname, lastname, middlename, gender, dob, empStatus, jobTitle));
     }
+
+
+    @Given("a request is prepared for updating an employee with dynamic data {string}, {string} , {string}  , {string} , {string} , {string} , {string} , {string}")
+    public void a_request_is_prepared_for_updating_an_employee_with_dynamic_data(String emp_id, String fName, String lName, String mName,
+                                                                                 String gender, String dob, String empStatus, String jobTitle) {
+        request = given().header(APIConstants.Header_Key_Content_Type,APIConstants.Header_Value_Content_Type).
+                header(APIConstants.Header_Key_Authorization,GenerateTokenSteps.token).
+                body(APIPayloadConstants.updateEmployeePayloadDynamic(emp_id,fName, lName, mName, gender, dob, empStatus, jobTitle));
+
+        employee_id = emp_id;
+    }
+
+    @When("a PUT call is made to update an employee")
+    public void a_put_call_is_made_to_update_an_employee() {
+        response = request.when().put(APIConstants.UPDATE_EMPLOYEE_URI);
+        response.prettyPrint();
+    }
+
+    @Given("a request is prepared for getting a updated employee")
+    public void a_request_is_prepared_for_getting_a_updated_employee() {
+        request = given().header(APIConstants.Header_Key_Content_Type,APIConstants.Header_Value_Content_Type).
+                header(APIConstants.Header_Key_Authorization,GenerateTokenSteps.token).
+                queryParam("employee_id", employee_id);
+    }
+
 }

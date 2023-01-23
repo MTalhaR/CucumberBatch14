@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="25e09718-2241-47c1-825e-ef0bd7613453" name="Changes" comment="API automation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notes" beforeDir="false" afterPath="$PROJECT_DIR$/Notes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/APISteps/APIWorkFlowSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/APISteps/APIWorkFlowSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/runners/APIRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runners/APIRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/utils/APIPayloadConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/APIPayloadConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/APIWorkflow.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/APIWorkflow.feature" afterDir="false" />
